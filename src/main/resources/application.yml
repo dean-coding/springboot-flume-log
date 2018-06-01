@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: flume-logs
+
+logback:
+  path: logs/
+  level: INFO

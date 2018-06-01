@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60" debug="false">
+
+	<springProperty scope="context" name="logPath"
+		source="logback.path" />
+	<springProperty scope="context" name="applicationName"
+		source="spring.application.name" />
+	<springProperty scope="context" name="level"
+		source="logback.level" />
+
+	<contextName>${applicationName}</contextName>
+
+	<appender name="LOCAL_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${logPath}/${applicationName}-%d{yyyyMMdd}.log
+			</FileNamePattern>
+			<MaxHistory>10</MaxHistory>
+		</rollingPolicy>
+
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%d] [%-5level] [%thread] [%logger] - %msg%n</pattern>
+		</layout>
+		<!--日志文件最大的大小 -->
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>100MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%d] [%-5level] [%thread] [%logger] - %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<root level="${level}">
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+	<logger name="local" additivity="false">
+		<appender-ref ref="LOCAL_FILE" />
+	</logger>
+
+	<logger name="com.demo.flume" level="INFO"></logger>
+
+</configuration>
