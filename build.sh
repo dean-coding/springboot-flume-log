@@ -11,4 +11,3 @@ tar czvf logsToFlume.tar.gz logsToFlume/
 rm -rf ./logsToFlume/
 echo "build successed!"
 echo "you can copy the file of logsToFlume.tar.gz and then run the script of start.sh"
-echo "example: scp ./logsToFlume.tar.gz hostname@hostaddr:/dir"
