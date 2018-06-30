@@ -25,7 +25,7 @@
 - **4.测试代码**
 
 -------------------
-##1.kafka相关pom依赖：(0.10.1.1版本)
+## 1.kafka相关pom依赖：(0.10.1.1版本)
 ``` python
 <dependency>
 	<groupId>org.apache.kafka</groupId>
@@ -53,7 +53,7 @@
 ```
 sl4j依赖,自行选择;此处整合springboot,未单独引入
 
-##2.logback的配置
+## 2.logback的配置
 ``` python
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
