@@ -3,5 +3,5 @@ spring:
     name: flume-logs
 
 logback:
-  path: /home/hongdou/hongwei/logs
+  path: /home/hongwei/logs
   level: INFO
