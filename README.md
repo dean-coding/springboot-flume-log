@@ -1,4 +1,6 @@
-# springboot-flume-logs
+
+
+# flume日志收集
 
 ## 1 执行 ./build.sh
 
